@@ -145,15 +145,84 @@ Deferred. Tracked but not in the current roadmap.
 
 ## Traceability
 
-Filled in by roadmap creation.
+Which phase covers which requirement. Updated by roadmap creation (2026-10-27).
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
+| FND-01 | Phase 1 | Pending |
+| FND-02 | Phase 1 | Pending |
+| FND-03 | Phase 1 | Pending |
+| AUTH-01 | Phase 1 | Pending |
+| AUTH-02 | Phase 1 | Pending |
+| AUTH-03 | Phase 1 | Pending |
+| AUTH-04 | Phase 1 | Pending |
+| JOB-01 | Phase 3 | Pending |
+| JOB-02 | Phase 3 | Pending |
+| JOB-03 | Phase 3 | Pending |
+| JOB-04 | Phase 3 | Pending |
+| JOB-05 | Phase 3 | Pending |
+| JOB-06 | Phase 3 | Pending |
+| PAY-01 | Phase 2 | Pending |
+| PAY-02 | Phase 2 | Pending |
+| PAY-03 | Phase 2 | Pending |
+| PAY-04 | Phase 2 | Pending |
+| PAY-05 | Phase 2 | Pending |
+| PAY-06 | Phase 2 | Pending |
+| PAY-07 | Phase 6 | Pending |
+| PAY-08 | Phase 6 | Pending |
+| PAY-09 | Phase 6 | Pending |
+| PAY-10 | Phase 6 | Pending |
+| PAY-11 | Phase 2 | Pending |
+| PAY-12 | Phase 2 | Pending |
+| PAY-13 | Phase 2 | Pending |
+| PAY-14 | Phase 2 | Pending |
+| LIFE-01 | Phase 2 | Pending |
+| LIFE-02 | Phase 5 | Pending |
+| LIFE-03 | Phase 3 | Pending |
+| LIFE-04 | Phase 3 | Pending |
+| LIFE-05 | Phase 3 | Pending |
+| LIFE-06 | Phase 3 | Pending |
+| EVID-01 | Phase 4 | Pending |
+| EVID-02 | Phase 4 | Pending |
+| EVID-03 | Phase 4 | Pending |
+| EVID-04 | Phase 4 | Pending |
+| EVID-05 | Phase 4 | Pending |
+| EVID-06 | Phase 4 | Pending |
+| EVID-07 | Phase 4 | Pending |
+| EVID-08 | Phase 4 | Pending |
+| EVID-09 | Phase 4 | Pending |
+| AI-01 | Phase 5 | Pending |
+| AI-02 | Phase 5 | Pending |
+| AI-03 | Phase 5 | Pending |
+| AI-04 | Phase 5 | Pending |
+| AI-05 | Phase 5 | Pending |
+| AI-06 | Phase 5 | Pending |
+| AI-07 | Phase 5 | Pending |
+| AI-08 | Phase 5 | Pending |
+| AI-09 | Phase 5 | Pending |
+| AI-10 | Phase 5 | Pending |
+| REV-01 | Phase 5 | Pending |
+| REV-02 | Phase 2 | Pending |
+| REV-03 | Phase 6 | Pending |
+| REV-04 | Phase 5 | Pending |
+| REV-05 | Phase 6 | Pending |
+| TIME-01 | Phase 6 | Pending |
+| TIME-02 | Phase 6 | Pending |
+| DISP-01 | Phase 6 | Pending |
+| DISP-02 | Phase 6 | Pending |
+| DISP-03 | Phase 6 | Pending |
+| DISP-04 | Phase 6 | Pending |
+| DISP-05 | Phase 6 | Pending |
+| NOTF-01 | Phase 7 | Pending |
+| NOTF-02 | Phase 7 | Pending |
+| DEMO-01 | Phase 7 | Pending |
+| DEMO-02 | Phase 7 | Pending |
 
 **Coverage:**
 - v1 requirements: 68 total
-- Mapped to phases: 0 (pending roadmap)
+- Mapped to phases: 68
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-10-27*
-*Last updated: 2026-10-27 after initial definition*
+*Last updated: 2026-10-27 after roadmap creation (traceability filled)*
