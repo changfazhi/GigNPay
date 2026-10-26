@@ -133,8 +133,19 @@ Money only moves when the work is proven: a PayPal authorization holds the custo
 
 ## Key Decisions
 
+Scoped v1 requirements live in `.planning/REQUIREMENTS.md`, which supersedes the Active list above where they differ. Research corrections (2026-10-27) are the later rows of this table.
+
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
+| Reauthorize from day 4, design for once; capture against latest auth id | PayPal rejects reauth inside the 3-day honor period; docs conflict on count | — Pending (spike in Phase 1) |
+| 7-day job lifetime with re-confirm-hold fallback (replaces 29-day cap) | Guaranteed hold ≈ 3 days + one reauth | — Pending |
+| Kill fee deferred to v2; silent customer escalates to judge with hold intact | Immediate payout can't be clawed back after a judge refund | — Pending |
+| Rework cut from v1 | Can't extend the hold; adds states | — Pending |
+| Reauth not shown in demo video | App clock can't move PayPal's clock | — Pending |
+| EXIF is corroborating only; server nonce + device GPS are primary integrity signals | iOS strips GPS from browser uploads; getUserMedia has no EXIF | — Pending |
+| SSE + polling for live status (not WebSocket) | Next.js route handlers can't host WebSockets | — Pending |
+| Kept from blueprint against research advice: multi-turn chat intake, judge agreement step, stock-image check (Cloud Vision) | Owner's call | — Pending |
+| Ratings/reputation → v2 | Not needed for the demo moments | — Pending |
 | Next.js full-stack TypeScript for app + API | Fastest single-codebase path for a solo hackathon build and one Render deploy | — Pending |
 | Anthropic + Google as the dual-model judge | Two independent vendors; Gemini handles video natively for working-proof clips | — Pending |
 | Aircon servicing, US, USD | Very visual before/after and a clear working-proof video; biggest PayPal market | — Pending |
