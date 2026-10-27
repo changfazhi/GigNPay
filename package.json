@@ -1,0 +1,56 @@
+{
+  "name": "pay-when-done",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:check": "DATABASE_URL=${DATABASE_URL:-postgres://build:build@127.0.0.1:5432/build} BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET:-build-only-placeholder-secret-0123456789} next build",
+    "start": "next start -H 0.0.0.0",
+    "worker": "tsx --env-file-if-exists=.env.local worker/index.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "seed": "tsx --env-file-if-exists=.env.local scripts/seed.ts",
+    "render:predeploy": "npm run db:migrate",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run --project unit",
+    "test:smoke": "vitest run --project smoke",
+    "test:all": "vitest run"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.1157.0",
+    "@aws-sdk/s3-request-presigner": "3.1157.0",
+    "better-auth": "1.7.14",
+    "drizzle-kit": "0.31.11",
+    "drizzle-orm": "0.45.4",
+    "exifr": "7.1.3",
+    "next": "16.4.3",
+    "pg": "8.23.1",
+    "pg-boss": "12.38.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "sharp": "0.35.5",
+    "sharp-phash": "2.2.0",
+    "tsx": "4.23.15",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "1.3.0",
+    "@elastic/elasticsearch": "9.5.1",
+    "@google/genai": "2.31.0",
+    "@tailwindcss/turbopack": "4.3.3",
+    "@types/node": "24.19.2",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.3",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3",
+    "vitest": "5.0.5"
+  },
+  "engines": {
+    "node": ">=22.12 <25"
+  }
+}
