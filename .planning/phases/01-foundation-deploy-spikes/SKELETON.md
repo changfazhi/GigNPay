@@ -2,13 +2,14 @@
 
 **Phase:** 1
 **Generated:** 2026-10-27
-**Built by plans:** 01-02 (scaffold, auth core, schema), 01-03 (auth UI, dashboard, worker, health), 01-06 (Render deploy, [BLOCKING] schema apply, live smoke)
+**Built by plans:** 01-02 (scaffold, exact pins, package legitimacy gate), 01-03 (Vitest harness, env module, evidence helpers, failing skeleton e2e test), 01-04 (shadcn UI kit), 01-05 (auth core, Phase 1 schema and migration), 01-08 (pg-boss heartbeat worker, /api/health), 01-09 (auth UI, role dashboard, header, proxy), 01-10 (Render deploy, [BLOCKING] schema apply, live smoke with the named live-DB check)
+**Ordering:** Plan 01-02 is the first code deliverable of the phase. Plan 01-01 runs beside it in wave 1 as owner-clock spike work (D-01: the PayPal reauthorization clock must start on day 1); it writes no app code and no skeleton plan depends on it, except that the deploy plan 01-10 needs the PayPal keys the owner adds to `.env.local` there.
 
 ## Capability Proven End-to-End
 
 A visitor opens the public Render HTTPS URL, signs up with email, password and a role (workers also give a PayPal email), stays signed in across refreshes, and lands on a role dashboard that reads their own row from Render Postgres and shows how many seconds ago the separate pg-boss background worker last wrote a heartbeat.
 
-Proof: `tests/smoke/skeleton.smoke.test.ts` and `tests/smoke/health.smoke.test.ts` pass against the live URL (plan 01-06, Task 3), after `scripts/db/check-schema.ts` lists every Phase 1 table in the live database.
+Proof: `tests/smoke/skeleton.smoke.test.ts` and `tests/smoke/health.smoke.test.ts` pass against the live URL (plan 01-10, Task 3), after `scripts/db/check-schema.ts` lists every Phase 1 table in the live database. Three named skeleton cases (sign-up with two `/api/me` reads, sign-in from a fresh cookie jar, dashboard worker card read from the user row) are recorded as `liveDbCheck` in `spike-evidence/deploy/deploy.json`; they are the first live-database proof of plan 01-09's sign-up, login and dashboard path.
 
 ## Architectural Decisions
 
@@ -32,11 +33,11 @@ Proof: `tests/smoke/skeleton.smoke.test.ts` and `tests/smoke/health.smoke.test.t
 
 ## Stack Touched in Phase 1
 
-- [x] Project scaffold (framework, build, lint, test runner) — plan 01-02
-- [x] Routing — real routes `/signup`, `/login`, `/dashboard`, `/api/auth/*`, `/api/me`, `/api/health` — plans 01-02, 01-03
-- [x] Database — real write (sign-up inserts user/account/session rows; worker inserts heartbeats) and real read (dashboard reads the user row and worker status) — plans 01-02, 01-03, verified live in 01-06
-- [x] UI — sign-up form wired to the Better Auth API; dashboard role panel wired to role routes (01-07); demo switcher wired to the switch route (01-08)
-- [x] Deployment — running on Render paid plans at a public HTTPS URL — plan 01-06
+- [x] Project scaffold (framework, build, lint, test runner, UI kit) — plans 01-02, 01-03, 01-04
+- [x] Routing — real routes `/signup`, `/login`, `/dashboard`, `/api/auth/*`, `/api/me`, `/api/health` — plans 01-05, 01-08, 01-09
+- [x] Database — real write (sign-up inserts user/account/session rows; worker inserts heartbeats) and real read (dashboard reads the user row and worker status) — plans 01-05, 01-08, 01-09, verified live in 01-10 (named live-DB check)
+- [x] UI — sign-up form wired to the Better Auth API (01-09); dashboard role panel wired to role routes (01-11); demo switcher wired to the switch route (01-13)
+- [x] Deployment — running on Render paid plans at a public HTTPS URL — plan 01-10
 
 ## Out of Scope (Deferred to Later Slices)
 

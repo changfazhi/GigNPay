@@ -41,23 +41,28 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. In demo mode the presenter can switch between the seeded customer, worker and judge accounts with one click, and every request after a switch is still authorized as that account.
   4. A photo and a short video taken on a phone upload directly to the private R2 bucket and display only through a signed URL, while the unsigned object URL is refused.
   5. Written spike results exist for PayPal reauthorize count and timing, partial capture then void, Payouts in sandbox, iPhone and Android photo metadata, Elastic bit-vector search, Claude and Gemini structured scoring, Zapier Catch Hook access, and SSE on Render, each stating what happened and what it changes in the design.
-**Plans:** 14 plans in 9 waves
+**Plans:** 19 plans in 13 waves
 
 Plans:
-- [ ] 01-01-PLAN.md — S-PAY aged authorizations: five sandbox AUTHORIZE orders approved and authorized in the first hour, honor-period reauth probe (D-01) [W1]
-- [ ] 01-02-PLAN.md — Walking skeleton 1/3: package legitimacy gate, Next 16 scaffold with exact pins, test harness, failing skeleton e2e test, Better Auth roles + D-02 judge gate, Phase 1 schema migration [W1]
-- [ ] 01-03-PLAN.md — Walking skeleton 2/3: sign-up/login, role dashboard from Postgres, header/sign-out, proxy, pg-boss heartbeat worker, /api/health [W2]
-- [ ] 01-04-PLAN.md — S-LLM: Claude and Gemini structured scoring on the same JPEGs [W2]
-- [ ] 01-05-PLAN.md — FND-02 storage core: private R2 bucket, presign module, live round-trip (unsigned/expired refused) [W2]
-- [ ] 01-06-PLAN.md — Walking skeleton 3/3: render.yaml (paid web + worker + Postgres), Render Blueprint, [BLOCKING] schema apply + verify, live skeleton smoke [W3]
-- [ ] 01-07-PLAN.md — AUTH-02: authorize helpers, withActor wrapper, role ping actions, live 403/401 and session smoke [W4]
-- [ ] 01-08-PLAN.md — AUTH-04: seeded demo accounts, DEMO_MODE-gated one-click switch [W5]
-- [ ] 01-09-PLAN.md — FND-01 webhook: fail-closed PayPal receiver, registration, simulator and forged deliveries received [W4]
-- [ ] 01-10-PLAN.md — S-PAY capture/void and Payouts probes; real verified webhooks and resend dedupe [W5]
-- [ ] 01-11-PLAN.md — S-SSE (laptop + redeploy) and S-ENV (ffmpeg, extensions) on Render [W6]
-- [ ] 01-12-PLAN.md — S-CAM: phone camera page, iPhone + Android capture matrix (D-03), signed-URL display; S-SSE phone runs [W7]
-- [ ] 01-13-PLAN.md — S-ES and S-ZAP last (D-04): bit-vector kNN, Catch Hook, trial expiry dates [W8]
-- [ ] 01-14-PLAN.md — SPIKES.md assembly with doc lint, aged reauth result or PENDING (D-01), PROJECT/STATE outcomes [W9]
+- [ ] 01-01-PLAN.md — S-PAY aged authorizations: five sandbox AUTHORIZE orders approved and authorized in the first hour, honor-period reauth probe (D-01; owner-clock spike work beside the skeleton, not a code dependency) [W1]
+- [ ] 01-02-PLAN.md — Walking skeleton 1/7 (first code deliverable): package legitimacy gate, Next 16 scaffold, exact pins, Phase 1 scripts, .gitignore/.env.example [W1]
+- [ ] 01-03-PLAN.md — Walking skeleton 2/7: Vitest unit/smoke harness, config test, env module, evidence redaction helpers, failing skeleton e2e smoke test [W2]
+- [ ] 01-04-PLAN.md — Walking skeleton 3/7: shadcn defaults UI kit (D-05) per the owner's package answer [W2]
+- [ ] 01-05-PLAN.md — Walking skeleton 4/7: Better Auth roles, worker PayPal email, D-02 judge gate, Phase 1 Drizzle schema and migration [W3]
+- [ ] 01-06-PLAN.md — S-LLM: Claude and Gemini structured scoring on the same JPEGs [W3]
+- [ ] 01-07-PLAN.md — FND-02 storage core: private R2 bucket, presign module, live round-trip (unsigned/expired refused) [W3]
+- [ ] 01-08-PLAN.md — Walking skeleton 5/7: pg-boss heartbeat worker and /api/health [W4]
+- [ ] 01-09-PLAN.md — Walking skeleton 6/7: sign-up/login, role dashboard from Postgres with worker status, header/sign-out, proxy [W5]
+- [ ] 01-10-PLAN.md — Walking skeleton 7/7: render.yaml (paid web + worker + Postgres), Render Blueprint, [BLOCKING] schema apply + verify, live skeleton smoke with named live-DB check [W6]
+- [ ] 01-11-PLAN.md — AUTH-02: authorize helpers, withActor wrapper, role ping actions, live 403/401 and session smoke [W7]
+- [ ] 01-12-PLAN.md — FND-01 webhook: fail-closed PayPal receiver, registration, simulator and forged deliveries received [W7]
+- [ ] 01-13-PLAN.md — AUTH-04: seeded demo accounts, DEMO_MODE-gated one-click switch [W8]
+- [ ] 01-14-PLAN.md — S-PAY capture/void and Payouts probes; real verified webhooks and resend dedupe [W8]
+- [ ] 01-15-PLAN.md — S-ENV: token-gated diagnostics (ffmpeg, Postgres extensions, bit_count, sharp HEIF) on Render [W9]
+- [ ] 01-16-PLAN.md — S-SSE: SSE route and page, worker notify producer, laptop + redeploy probes on Render [W10]
+- [ ] 01-17-PLAN.md — S-CAM: phone camera page, iPhone + Android capture matrix (D-03), signed-URL display; S-SSE phone runs [W11]
+- [ ] 01-18-PLAN.md — S-ES and S-ZAP last (D-04): bit-vector kNN, Catch Hook, trial expiry dates [W12]
+- [ ] 01-19-PLAN.md — SPIKES.md assembly with doc lint, aged reauth result or PENDING (D-01), PROJECT/STATE outcomes [W13]
 **UI hint**: yes
 
 ### Phase 2: Money Skeleton

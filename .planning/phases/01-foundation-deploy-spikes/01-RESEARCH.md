@@ -828,16 +828,23 @@ Order matters: items marked **EARLY** start clocks or unblock the longest track.
 | A15 | Owner accepts "judge" self-signup behind a code or demo flag | Open Questions | If the owner wants fully open judge signup, drop the code |
 | A16 | Render keeps `node_modules` from build for the worker start command | Pattern 8 | Move `tsx` and `drizzle-kit` to `dependencies` (already recommended) |
 
-## Open Questions
+## Open Questions (RESOLVED)
+
+All five questions were answered by the owner during `/gsd-plan-phase 1` and recorded in `01-CONTEXT.md`.
 
 1. **Is a dated "pending" acceptable for the aged-reauth half of the PayPal spike?**
    - Known: reauth is legal only from day 4; the Phase 1 build may finish in fewer than 4 days; the only consumer is Phase 6 (PAY-09), and Phase 2's chain model already follows the schema's once-only rule.
    - Unclear: whether the owner wants Phase 1 held open until day 4, or closed with a dated follow-up.
    - Recommendation: start the aged orders in the first hour of execution; if day 4 has not arrived at phase end, close Phase 1 with S-PAY-aged `PENDING (due <date>)` and a STATE.md blocker that gates Phase 6, not Phase 2.
+   - RESOLVED (D-01): yes. The aged orders are created in the first hour of execution (plan 01-01); Phase 1 may close with S-PAY-REAUTH `PENDING (due <date>)`, which gates Phase 6 only (plan 01-19 records the dated STATE.md blocker).
 2. **Do Render, Elastic, Zapier or Anthropic/Google offer hackathon credits or sponsor codes?** Trials are 14 days; Phase 7 may land after they lapse. Recommendation: ask the owner; otherwise defer account creation for Elastic and Zapier to the latest point in Phase 1 and plan to recreate in Phase 7 if needed.
+   - RESOLVED (D-04): sponsor credits are unknown. The Elastic trial and Zapier account are created as late as possible (plan 01-18, second-to-last wave) and each trial's expiry date is recorded in SPIKES.md and STATE.md (plan 01-19).
 3. **Judge sign-up policy.** Open sign-up lets any visitor judge disputes. Recommendation: allow `judge` at sign-up only when `DEMO_MODE=true` or an optional `JUDGE_SIGNUP_CODE` matches; the seeded judge covers the demo either way.
+   - RESOLVED (D-02): judge sign-up is allowed only when `DEMO_MODE` is on or the request carries a `JUDGE_SIGNUP_CODE` matching the server value; customer and worker sign-up stay open; admin is never selectable (plan 01-05).
 4. **Seed data for webhook proof.** Which sandbox personal email is the seeded worker's PayPal email? Needed as `SEED_WORKER_PAYPAL_EMAIL`; use a real sandbox personal account so Phase 2 payouts reach it.
+   - RESOLVED (CONTEXT "Specific Ideas"): the seeded worker's PayPal email comes from env `SEED_WORKER_PAYPAL_EMAIL`, a real sandbox personal account the owner creates (plan 01-01 Task 1; used by the seed in plan 01-13).
 5. **Will one person have both an iPhone and an Android phone?** If not, S-CAM records the gap and the Phase 4 gate stays three-state with real-device calibration deferred.
+   - RESOLVED (D-03): the owner has both an iPhone and an Android phone; the S-CAM matrix covers both and no cell may be left untested for lack of a device (plan 01-17).
 
 ## Sources
 
