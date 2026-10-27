@@ -3,7 +3,7 @@
 **Phase:** 1
 **Generated:** 2026-10-27
 **Built by plans:** 01-02 (scaffold, exact pins, package legitimacy gate), 01-03 (Vitest harness, env module, evidence helpers, failing skeleton e2e test), 01-04 (shadcn UI kit), 01-05 (auth core, Phase 1 schema and migration), 01-08 (pg-boss heartbeat worker, /api/health), 01-09 (auth UI, role dashboard, header, proxy), 01-10 (Render deploy, [BLOCKING] schema apply, live smoke with the named live-DB check)
-**Ordering:** Plan 01-02 is the first code deliverable of the phase. Plan 01-01 runs beside it in wave 1 as owner-clock spike work (D-01: the PayPal reauthorization clock must start on day 1); it writes no app code and no skeleton plan depends on it, except that the deploy plan 01-10 needs the PayPal keys the owner adds to `.env.local` there.
+**Ordering:** Plan 01-02 is the first app code deliverable of the phase. Plan 01-01 runs beside it in wave 1 as owner-clock spike work (D-01: the PayPal reauthorization clock must start on day 1). It writes one standalone spike script, `scripts/spikes/paypal/aged-orders.ts`, plus redacted evidence JSON, and no app code. That script does not depend on the app's `package.json`: it runs with plain `node` (Node 24 type stripping), imports only `node:*` built-ins and uses the global `fetch`, so it works before plan 01-02 has created anything. No skeleton plan depends on 01-01, except that the deploy plan 01-10 needs the PayPal keys the owner adds to `.env.local` there.
 
 ## Capability Proven End-to-End
 
