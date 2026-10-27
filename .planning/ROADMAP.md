@@ -46,13 +46,13 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. A photo and a short video taken on a phone upload directly to the private R2 bucket and display only through a signed URL, while the unsigned object URL is refused.
   5. Written spike results exist for PayPal reauthorize count and timing, partial capture then void, Payouts in sandbox, iPhone and Android photo metadata, Elastic bit-vector search, Claude and Gemini structured scoring, Zapier Catch Hook access, and SSE on Render, each stating what happened and what it changes in the design.
 
-**Plans:** 19 plans in 13 waves
+**Plans:** 1/19 plans executed
 
 Plans:
 **Wave 1**
 
 - [ ] 01-01-PLAN.md — S-PAY aged authorizations: five sandbox AUTHORIZE orders approved and authorized in the first hour, honor-period reauth probe (D-01; owner-clock spike work beside the skeleton, not a code dependency) [W1]
-- [ ] 01-02-PLAN.md — Walking skeleton 1/7 (first code deliverable): package legitimacy gate, Next 16 scaffold, exact pins, Phase 1 scripts, .gitignore/.env.example [W1]
+- [x] 01-02-PLAN.md — Walking skeleton 1/7 (first code deliverable): package legitimacy gate, Next 16 scaffold, exact pins, Phase 1 scripts, .gitignore/.env.example [W1]
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
@@ -216,7 +216,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation, Deploy & Spikes | 0/TBD | Not started | - |
+| 1. Foundation, Deploy & Spikes | 1/19 | In Progress|  |
 | 2. Money Skeleton | 0/TBD | Not started | - |
 | 3. Job Lifecycle | 0/TBD | Not started | - |
 | 4. Evidence Capture & Integrity Gate | 0/TBD | Not started | - |
