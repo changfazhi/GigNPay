@@ -46,7 +46,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. A photo and a short video taken on a phone upload directly to the private R2 bucket and display only through a signed URL, while the unsigned object URL is refused.
   5. Written spike results exist for PayPal reauthorize count and timing, partial capture then void, Payouts in sandbox, iPhone and Android photo metadata, Elastic bit-vector search, Claude and Gemini structured scoring, Zapier Catch Hook access, and SSE on Render, each stating what happened and what it changes in the design.
 
-**Plans:** 1/19 plans executed
+**Plans:** 3/19 plans executed
 
 Plans:
 **Wave 1**
@@ -56,8 +56,8 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 01-03-PLAN.md — Walking skeleton 2/7: Vitest unit/smoke harness, config test, env module, evidence redaction helpers, failing skeleton e2e smoke test [W2]
-- [ ] 01-04-PLAN.md — Walking skeleton 3/7: shadcn defaults UI kit (D-05) per the owner's package answer [W2]
+- [x] 01-03-PLAN.md — Walking skeleton 2/7: Vitest unit/smoke harness, config test, env module, evidence redaction helpers, failing skeleton e2e smoke test [W2]
+- [x] 01-04-PLAN.md — Walking skeleton 3/7: shadcn defaults UI kit (D-05) per the owner's package answer [W2]
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
@@ -216,7 +216,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation, Deploy & Spikes | 1/19 | In Progress|  |
+| 1. Foundation, Deploy & Spikes | 3/19 | In Progress|  |
 | 2. Money Skeleton | 0/TBD | Not started | - |
 | 3. Job Lifecycle | 0/TBD | Not started | - |
 | 4. Evidence Capture & Integrity Gate | 0/TBD | Not started | - |
