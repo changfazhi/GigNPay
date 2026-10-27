@@ -1,0 +1,50 @@
+{
+  "mode": "placeholder",
+  "images": [
+    {
+      "label": "before-1",
+      "path": "llm-derivatives/before-1.jpg",
+      "sha256": "4140d7469e439683e14c78142defef7e4148d1d9919a5c7398aa8153778a44d9",
+      "width": 1200,
+      "height": 900,
+      "bytes": 13587,
+      "kind": "before-after"
+    },
+    {
+      "label": "after-1",
+      "path": "llm-derivatives/after-1.jpg",
+      "sha256": "8537b534079791fbd3a73893801a3a4f971e930a008182485ff75a45ba153de6",
+      "width": 1200,
+      "height": 900,
+      "bytes": 11620,
+      "kind": "before-after"
+    },
+    {
+      "label": "before-2",
+      "path": "llm-derivatives/before-2.jpg",
+      "sha256": "a41834ec7366b40672c80764b6e2cea47e324e5163c9e304caaddd920c6da2f5",
+      "width": 1200,
+      "height": 900,
+      "bytes": 14332,
+      "kind": "before-after"
+    },
+    {
+      "label": "after-2",
+      "path": "llm-derivatives/after-2.jpg",
+      "sha256": "006890287f71f121b8f54d6e903393125c8db888dd494b646ad86aeef0c9e3fe",
+      "width": 1200,
+      "height": 900,
+      "bytes": 12558,
+      "kind": "before-after"
+    },
+    {
+      "label": "sign",
+      "path": "llm-derivatives/sign.jpg",
+      "sha256": "f9ed577bce0e25377bd32e9e57051cbb7de61f4e8d3bba88c302e59f56faa620",
+      "width": 1200,
+      "height": 900,
+      "bytes": 26338,
+      "kind": "sign"
+    }
+  ]
+}
