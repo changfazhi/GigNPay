@@ -20,7 +20,8 @@ import {
 const ROUNDS = 3;
 const TIMEOUT_MS = 120_000;
 const RAW_LIMIT = 4000;
-const GEMINI_PREFERENCE = ["gemini-3.8-flash", "gemini-3.6-flash"];
+// Flash-Lite first: Google's high-volume tier, so free-tier keys get more requests per day.
+const GEMINI_PREFERENCE = ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.8-flash"];
 
 type CallRecord = {
   round: number;
@@ -200,6 +201,8 @@ async function callGemini(
     try {
       text = await viaGenerateContent();
     } catch (first) {
+      // A quota or overload error would fail the same way on the other surface; don't spend another request.
+      if (/\b(429|503)\b/.test(errMessage(first))) throw first;
       rec.costNote = `generateContent failed (${errMessage(first)}); retried once via interactions`;
       text = await viaInteractions();
     }
