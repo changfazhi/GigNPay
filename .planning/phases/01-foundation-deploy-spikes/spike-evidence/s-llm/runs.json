@@ -1,0 +1,145 @@
+{
+  "generatedAt": "2026-11-08T15:37:03.745Z",
+  "fixtureMode": "placeholder",
+  "models": {
+    "geminiChosen": "gemini-3.7-flash",
+    "geminiAnswered": [
+      null
+    ]
+  },
+  "geminiModelsList": {
+    "totalModels": 61,
+    "flashOrGemini4Ids": [
+      "gemini-2.5-flash",
+      "gemini-2.5-flash-preview-tts",
+      "gemini-flash-latest",
+      "gemini-flash-lite-latest",
+      "gemini-2.5-flash-lite",
+      "gemini-2.5-flash-image",
+      "gemini-3-flash-preview",
+      "gemini-3.1-flash-lite-preview",
+      "gemini-3.1-flash-lite",
+      "gemini-3.1-flash-image-preview",
+      "gemini-3.1-flash-image",
+      "gemini-3.1-flash-lite-image",
+      "gemini-3.5-flash",
+      "gemini-3.5-flash-lite",
+      "gemini-omni-flash-preview",
+      "gemini-omni-1.1-flash",
+      "gemini-omni-1.2-flash",
+      "gemini-3.6-flash",
+      "gemini-3.7-flash",
+      "gemini-3.8-flash",
+      "gemini-4-argon",
+      "gemini-3.1-flash-tts-preview",
+      "gemini-3.8-flash-tts",
+      "gemini-3.8-flash-lite-tts",
+      "gemini-2.5-flash-native-audio-latest",
+      "gemini-2.5-flash-native-audio-preview-09-2025",
+      "gemini-2.5-flash-native-audio-preview-12-2025",
+      "gemini-3.1-flash-live-preview"
+    ],
+    "error": null
+  },
+  "decisions": {
+    "judge": "Gemini only (owner decision 2026-11-08); a timeout, refusal or schema failure is an outage and routes to the customer",
+    "samplingParametersSent": false,
+    "timeoutMsPerCall": 120000
+  },
+  "thresholds": {
+    "repeatTolerance": 1.5,
+    "avgBar": 8,
+    "minBar": 6
+  },
+  "calls": [
+    {
+      "round": 1,
+      "requestedModel": "gemini-3.7-flash",
+      "model": null,
+      "surface": "interactions.create",
+      "latencyMs": 56064,
+      "imageLabels": [
+        "before-1",
+        "after-1",
+        "before-2",
+        "after-2"
+      ],
+      "usage": null,
+      "stopReason": null,
+      "rawText": null,
+      "schemaValid": false,
+      "zodIssues": null,
+      "scores": null,
+      "average": null,
+      "meetsAutoReleaseBar": null,
+      "instructionalTextInMedia": null,
+      "suspiciousTextQuote": null,
+      "estimatedCostUsd": null,
+      "costNote": "generateContent failed (ApiError: {\"error\":{\"code\":503,\"message\":\"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\"status\":\"UNAVAILABLE\"}}); retried once via interactions",
+      "outage": true,
+      "outageReason": "InternalServerError: 503 gemini-3.7-flash is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
+      "parsed": null
+    },
+    {
+      "round": 2,
+      "requestedModel": "gemini-3.7-flash",
+      "model": null,
+      "surface": "interactions.create",
+      "latencyMs": 159574,
+      "imageLabels": [
+        "before-1",
+        "after-1",
+        "before-2",
+        "after-2"
+      ],
+      "usage": null,
+      "stopReason": null,
+      "rawText": null,
+      "schemaValid": false,
+      "zodIssues": null,
+      "scores": null,
+      "average": null,
+      "meetsAutoReleaseBar": null,
+      "instructionalTextInMedia": null,
+      "suspiciousTextQuote": null,
+      "estimatedCostUsd": null,
+      "costNote": "generateContent failed (Error: timeout after 120000 ms); retried once via interactions",
+      "outage": true,
+      "outageReason": "RateLimitError: 429 Rate limit exceeded for model gemini-3.8-flash (limit: 20 requests per day on Free Tier). Please retry in 16h23m30s or upgrade your tier at https://ai.dev/rate-limit.",
+      "parsed": null
+    },
+    {
+      "round": 3,
+      "requestedModel": "gemini-3.7-flash",
+      "model": null,
+      "surface": "interactions.create",
+      "latencyMs": 34433,
+      "imageLabels": [
+        "before-1",
+        "after-1",
+        "before-2",
+        "after-2",
+        "sign"
+      ],
+      "usage": null,
+      "stopReason": null,
+      "rawText": null,
+      "schemaValid": false,
+      "zodIssues": null,
+      "scores": null,
+      "average": null,
+      "meetsAutoReleaseBar": null,
+      "instructionalTextInMedia": null,
+      "suspiciousTextQuote": null,
+      "estimatedCostUsd": null,
+      "costNote": "generateContent failed (ApiError: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash, description: Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\nPlease retry in 16h23m30.386510272s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-3.8-flash\",\"location\":\"global\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"59010s\"}]}}); retried once via interactions",
+      "outage": true,
+      "outageReason": "RateLimitError: 429 Rate limit exceeded for model gemini-3.8-flash (limit: 20 requests per day on Free Tier). Please retry in 16h22m56s or upgrade your tier at https://ai.dev/rate-limit.",
+      "parsed": null
+    }
+  ],
+  "repeatGap": null,
+  "summary": {
+    "geminiSchemaValid": "0/3"
+  }
+}

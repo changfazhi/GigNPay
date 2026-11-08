@@ -246,5 +246,811 @@
       },
       "at": "2026-11-08T15:49:34.759Z"
     }
-  ]
+  ],
+  "authorizations": [
+    {
+      "step": "authorize",
+      "label": "A1",
+      "method": "POST",
+      "path": "/v2/checkout/orders/47A48666AA894723D/authorize",
+      "requestId": "pwd-spike-authorize-47A48666AA894723D",
+      "status": 201,
+      "debugId": "ca575c96c89cd",
+      "name": null,
+      "message": null,
+      "issues": [],
+      "body": {
+        "id": "47A48666AA894723D",
+        "intent": "AUTHORIZE",
+        "status": "COMPLETED",
+        "payment_source": {
+          "paypal": {
+            "email_address": "[sandbox-email]",
+            "account_id": "KW564SHJRK4BJ",
+            "account_status": "VERIFIED",
+            "name": {
+              "given_name": "John",
+              "surname": "Doe"
+            },
+            "address": {
+              "country_code": "SG"
+            }
+          }
+        },
+        "purchase_units": [
+          {
+            "reference_id": "A1",
+            "amount": {
+              "currency_code": "USD",
+              "value": "20.00"
+            },
+            "payee": {
+              "email_address": "[sandbox-email]",
+              "merchant_id": "PVLXJK3DZXLVA"
+            },
+            "description": "PWD spike order A1",
+            "custom_id": "spike-A1",
+            "invoice_id": "pwd-spike-A1-202611081549",
+            "shipping": {
+              "name": {
+                "full_name": "John Doe"
+              },
+              "address": {
+                "address_line_1": "123 Thomson Rd.",
+                "admin_area_2": "Singapore",
+                "postal_code": "308123",
+                "country_code": "SG"
+              }
+            },
+            "payments": {
+              "authorizations": [
+                {
+                  "status": "CREATED",
+                  "id": "6LP65089RF371532A",
+                  "amount": {
+                    "currency_code": "USD",
+                    "value": "20.00"
+                  },
+                  "invoice_id": "pwd-spike-A1-202611081549",
+                  "custom_id": "spike-A1",
+                  "seller_protection": {
+                    "status": "ELIGIBLE",
+                    "dispute_categories": [
+                      "ITEM_NOT_RECEIVED",
+                      "UNAUTHORIZED_TRANSACTION"
+                    ]
+                  },
+                  "expiration_time": "2026-12-07T15:59:47Z",
+                  "links": [
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/6LP65089RF371532A",
+                      "rel": "self",
+                      "method": "GET"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/6LP65089RF371532A/capture",
+                      "rel": "capture",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/6LP65089RF371532A/void",
+                      "rel": "void",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/6LP65089RF371532A/reauthorize",
+                      "rel": "reauthorize",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/checkout/orders/47A48666AA894723D",
+                      "rel": "up",
+                      "method": "GET"
+                    }
+                  ],
+                  "create_time": "2026-11-08T15:59:47Z",
+                  "update_time": "2026-11-08T15:59:47Z"
+                }
+              ]
+            }
+          }
+        ],
+        "payer": {
+          "email_address": "[sandbox-email]",
+          "payer_id": "KW564SHJRK4BJ",
+          "address": {
+            "country_code": "SG"
+          }
+        },
+        "create_time": "2026-11-08T15:49:31Z",
+        "update_time": "2026-11-08T15:59:47Z",
+        "links": [
+          {
+            "href": "https://api.sandbox.paypal.com/v2/checkout/orders/47A48666AA894723D",
+            "rel": "self",
+            "method": "GET"
+          }
+        ]
+      },
+      "at": "2026-11-08T15:59:48.046Z"
+    },
+    {
+      "step": "authorize",
+      "label": "A2",
+      "method": "POST",
+      "path": "/v2/checkout/orders/0WT15797HC727551A/authorize",
+      "requestId": "pwd-spike-authorize-0WT15797HC727551A",
+      "status": 201,
+      "debugId": "ca575cb617bda",
+      "name": null,
+      "message": null,
+      "issues": [],
+      "body": {
+        "id": "0WT15797HC727551A",
+        "intent": "AUTHORIZE",
+        "status": "COMPLETED",
+        "payment_source": {
+          "paypal": {
+            "email_address": "[sandbox-email]",
+            "account_id": "KW564SHJRK4BJ",
+            "account_status": "VERIFIED",
+            "name": {
+              "given_name": "John",
+              "surname": "Doe"
+            },
+            "address": {
+              "country_code": "SG"
+            }
+          }
+        },
+        "purchase_units": [
+          {
+            "reference_id": "A2",
+            "amount": {
+              "currency_code": "USD",
+              "value": "20.00"
+            },
+            "payee": {
+              "email_address": "[sandbox-email]",
+              "merchant_id": "PVLXJK3DZXLVA"
+            },
+            "description": "PWD spike order A2",
+            "custom_id": "spike-A2",
+            "invoice_id": "pwd-spike-A2-202611081549",
+            "shipping": {
+              "name": {
+                "full_name": "John Doe"
+              },
+              "address": {
+                "address_line_1": "123 Thomson Rd.",
+                "admin_area_2": "Singapore",
+                "postal_code": "308123",
+                "country_code": "SG"
+              }
+            },
+            "payments": {
+              "authorizations": [
+                {
+                  "status": "CREATED",
+                  "id": "6VN45365R1323900C",
+                  "amount": {
+                    "currency_code": "USD",
+                    "value": "20.00"
+                  },
+                  "invoice_id": "pwd-spike-A2-202611081549",
+                  "custom_id": "spike-A2",
+                  "seller_protection": {
+                    "status": "ELIGIBLE",
+                    "dispute_categories": [
+                      "ITEM_NOT_RECEIVED",
+                      "UNAUTHORIZED_TRANSACTION"
+                    ]
+                  },
+                  "expiration_time": "2026-12-07T16:01:07Z",
+                  "links": [
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/6VN45365R1323900C",
+                      "rel": "self",
+                      "method": "GET"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/6VN45365R1323900C/capture",
+                      "rel": "capture",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/6VN45365R1323900C/void",
+                      "rel": "void",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/6VN45365R1323900C/reauthorize",
+                      "rel": "reauthorize",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/checkout/orders/0WT15797HC727551A",
+                      "rel": "up",
+                      "method": "GET"
+                    }
+                  ],
+                  "create_time": "2026-11-08T16:01:07Z",
+                  "update_time": "2026-11-08T16:01:07Z"
+                }
+              ]
+            }
+          }
+        ],
+        "payer": {
+          "email_address": "[sandbox-email]",
+          "payer_id": "KW564SHJRK4BJ",
+          "address": {
+            "country_code": "SG"
+          }
+        },
+        "create_time": "2026-11-08T15:49:31Z",
+        "update_time": "2026-11-08T16:01:08Z",
+        "links": [
+          {
+            "href": "https://api.sandbox.paypal.com/v2/checkout/orders/0WT15797HC727551A",
+            "rel": "self",
+            "method": "GET"
+          }
+        ]
+      },
+      "at": "2026-11-08T16:01:08.314Z"
+    },
+    {
+      "step": "authorize",
+      "label": "B",
+      "method": "POST",
+      "path": "/v2/checkout/orders/2T446735G11403446/authorize",
+      "requestId": "pwd-spike-authorize-2T446735G11403446",
+      "status": 201,
+      "debugId": "ca575cb6dc95e",
+      "name": null,
+      "message": null,
+      "issues": [],
+      "body": {
+        "id": "2T446735G11403446",
+        "intent": "AUTHORIZE",
+        "status": "COMPLETED",
+        "payment_source": {
+          "paypal": {
+            "email_address": "[sandbox-email]",
+            "account_id": "KW564SHJRK4BJ",
+            "account_status": "VERIFIED",
+            "name": {
+              "given_name": "John",
+              "surname": "Doe"
+            },
+            "address": {
+              "country_code": "SG"
+            }
+          }
+        },
+        "purchase_units": [
+          {
+            "reference_id": "B",
+            "amount": {
+              "currency_code": "USD",
+              "value": "30.00"
+            },
+            "payee": {
+              "email_address": "[sandbox-email]",
+              "merchant_id": "PVLXJK3DZXLVA"
+            },
+            "description": "PWD spike order B",
+            "custom_id": "spike-B",
+            "invoice_id": "pwd-spike-B-202611081549",
+            "shipping": {
+              "name": {
+                "full_name": "John Doe"
+              },
+              "address": {
+                "address_line_1": "123 Thomson Rd.",
+                "admin_area_2": "Singapore",
+                "postal_code": "308123",
+                "country_code": "SG"
+              }
+            },
+            "payments": {
+              "authorizations": [
+                {
+                  "status": "CREATED",
+                  "id": "3WH54856K9495361T",
+                  "amount": {
+                    "currency_code": "USD",
+                    "value": "30.00"
+                  },
+                  "invoice_id": "pwd-spike-B-202611081549",
+                  "custom_id": "spike-B",
+                  "seller_protection": {
+                    "status": "ELIGIBLE",
+                    "dispute_categories": [
+                      "ITEM_NOT_RECEIVED",
+                      "UNAUTHORIZED_TRANSACTION"
+                    ]
+                  },
+                  "expiration_time": "2026-12-07T16:01:09Z",
+                  "links": [
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/3WH54856K9495361T",
+                      "rel": "self",
+                      "method": "GET"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/3WH54856K9495361T/capture",
+                      "rel": "capture",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/3WH54856K9495361T/void",
+                      "rel": "void",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/3WH54856K9495361T/reauthorize",
+                      "rel": "reauthorize",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/checkout/orders/2T446735G11403446",
+                      "rel": "up",
+                      "method": "GET"
+                    }
+                  ],
+                  "create_time": "2026-11-08T16:01:09Z",
+                  "update_time": "2026-11-08T16:01:09Z"
+                }
+              ]
+            }
+          }
+        ],
+        "payer": {
+          "email_address": "[sandbox-email]",
+          "payer_id": "KW564SHJRK4BJ",
+          "address": {
+            "country_code": "SG"
+          }
+        },
+        "create_time": "2026-11-08T15:49:32Z",
+        "update_time": "2026-11-08T16:01:09Z",
+        "links": [
+          {
+            "href": "https://api.sandbox.paypal.com/v2/checkout/orders/2T446735G11403446",
+            "rel": "self",
+            "method": "GET"
+          }
+        ]
+      },
+      "at": "2026-11-08T16:01:10.063Z"
+    },
+    {
+      "step": "authorize",
+      "label": "C",
+      "method": "POST",
+      "path": "/v2/checkout/orders/54M40776C23986738/authorize",
+      "requestId": "pwd-spike-authorize-54M40776C23986738",
+      "status": 201,
+      "debugId": "ca575cb7c6ec8",
+      "name": null,
+      "message": null,
+      "issues": [],
+      "body": {
+        "id": "54M40776C23986738",
+        "intent": "AUTHORIZE",
+        "status": "COMPLETED",
+        "payment_source": {
+          "paypal": {
+            "email_address": "[sandbox-email]",
+            "account_id": "KW564SHJRK4BJ",
+            "account_status": "VERIFIED",
+            "name": {
+              "given_name": "John",
+              "surname": "Doe"
+            },
+            "address": {
+              "country_code": "SG"
+            }
+          }
+        },
+        "purchase_units": [
+          {
+            "reference_id": "C",
+            "amount": {
+              "currency_code": "USD",
+              "value": "20.00"
+            },
+            "payee": {
+              "email_address": "[sandbox-email]",
+              "merchant_id": "PVLXJK3DZXLVA"
+            },
+            "description": "PWD spike order C",
+            "custom_id": "spike-C",
+            "invoice_id": "pwd-spike-C-202611081549",
+            "shipping": {
+              "name": {
+                "full_name": "John Doe"
+              },
+              "address": {
+                "address_line_1": "123 Thomson Rd.",
+                "admin_area_2": "Singapore",
+                "postal_code": "308123",
+                "country_code": "SG"
+              }
+            },
+            "payments": {
+              "authorizations": [
+                {
+                  "status": "CREATED",
+                  "id": "2UD848126B1461209",
+                  "amount": {
+                    "currency_code": "USD",
+                    "value": "20.00"
+                  },
+                  "invoice_id": "pwd-spike-C-202611081549",
+                  "custom_id": "spike-C",
+                  "seller_protection": {
+                    "status": "ELIGIBLE",
+                    "dispute_categories": [
+                      "ITEM_NOT_RECEIVED",
+                      "UNAUTHORIZED_TRANSACTION"
+                    ]
+                  },
+                  "expiration_time": "2026-12-07T16:01:11Z",
+                  "links": [
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/2UD848126B1461209",
+                      "rel": "self",
+                      "method": "GET"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/2UD848126B1461209/capture",
+                      "rel": "capture",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/2UD848126B1461209/void",
+                      "rel": "void",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/2UD848126B1461209/reauthorize",
+                      "rel": "reauthorize",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/checkout/orders/54M40776C23986738",
+                      "rel": "up",
+                      "method": "GET"
+                    }
+                  ],
+                  "create_time": "2026-11-08T16:01:11Z",
+                  "update_time": "2026-11-08T16:01:11Z"
+                }
+              ]
+            }
+          }
+        ],
+        "payer": {
+          "email_address": "[sandbox-email]",
+          "payer_id": "KW564SHJRK4BJ",
+          "address": {
+            "country_code": "SG"
+          }
+        },
+        "create_time": "2026-11-08T15:49:33Z",
+        "update_time": "2026-11-08T16:01:12Z",
+        "links": [
+          {
+            "href": "https://api.sandbox.paypal.com/v2/checkout/orders/54M40776C23986738",
+            "rel": "self",
+            "method": "GET"
+          }
+        ]
+      },
+      "at": "2026-11-08T16:01:12.622Z"
+    },
+    {
+      "step": "authorize",
+      "label": "D",
+      "method": "POST",
+      "path": "/v2/checkout/orders/5SH152820C396250V/authorize",
+      "requestId": "pwd-spike-authorize-5SH152820C396250V",
+      "status": 201,
+      "debugId": "ca575cb8829b7",
+      "name": null,
+      "message": null,
+      "issues": [],
+      "body": {
+        "id": "5SH152820C396250V",
+        "intent": "AUTHORIZE",
+        "status": "COMPLETED",
+        "payment_source": {
+          "paypal": {
+            "email_address": "[sandbox-email]",
+            "account_id": "KW564SHJRK4BJ",
+            "account_status": "VERIFIED",
+            "name": {
+              "given_name": "John",
+              "surname": "Doe"
+            },
+            "address": {
+              "country_code": "SG"
+            }
+          }
+        },
+        "purchase_units": [
+          {
+            "reference_id": "D",
+            "amount": {
+              "currency_code": "USD",
+              "value": "20.00"
+            },
+            "payee": {
+              "email_address": "[sandbox-email]",
+              "merchant_id": "PVLXJK3DZXLVA"
+            },
+            "description": "PWD spike order D",
+            "custom_id": "spike-D",
+            "invoice_id": "pwd-spike-D-202611081549",
+            "shipping": {
+              "name": {
+                "full_name": "John Doe"
+              },
+              "address": {
+                "address_line_1": "123 Thomson Rd.",
+                "admin_area_2": "Singapore",
+                "postal_code": "308123",
+                "country_code": "SG"
+              }
+            },
+            "payments": {
+              "authorizations": [
+                {
+                  "status": "CREATED",
+                  "id": "0MS90256UD826993E",
+                  "amount": {
+                    "currency_code": "USD",
+                    "value": "20.00"
+                  },
+                  "invoice_id": "pwd-spike-D-202611081549",
+                  "custom_id": "spike-D",
+                  "seller_protection": {
+                    "status": "ELIGIBLE",
+                    "dispute_categories": [
+                      "ITEM_NOT_RECEIVED",
+                      "UNAUTHORIZED_TRANSACTION"
+                    ]
+                  },
+                  "expiration_time": "2026-12-07T16:01:13Z",
+                  "links": [
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/0MS90256UD826993E",
+                      "rel": "self",
+                      "method": "GET"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/0MS90256UD826993E/capture",
+                      "rel": "capture",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/0MS90256UD826993E/void",
+                      "rel": "void",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/0MS90256UD826993E/reauthorize",
+                      "rel": "reauthorize",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/checkout/orders/5SH152820C396250V",
+                      "rel": "up",
+                      "method": "GET"
+                    }
+                  ],
+                  "create_time": "2026-11-08T16:01:13Z",
+                  "update_time": "2026-11-08T16:01:13Z"
+                }
+              ]
+            }
+          }
+        ],
+        "payer": {
+          "email_address": "[sandbox-email]",
+          "payer_id": "KW564SHJRK4BJ",
+          "address": {
+            "country_code": "SG"
+          }
+        },
+        "create_time": "2026-11-08T15:49:34Z",
+        "update_time": "2026-11-08T16:01:14Z",
+        "links": [
+          {
+            "href": "https://api.sandbox.paypal.com/v2/checkout/orders/5SH152820C396250V",
+            "rel": "self",
+            "method": "GET"
+          }
+        ]
+      },
+      "at": "2026-11-08T16:01:14.497Z"
+    },
+    {
+      "step": "authorize-replay",
+      "label": "B",
+      "method": "POST",
+      "path": "/v2/checkout/orders/2T446735G11403446/authorize",
+      "requestId": "pwd-spike-authorize-2T446735G11403446",
+      "status": 201,
+      "debugId": "ca575cb91a962",
+      "name": null,
+      "message": null,
+      "issues": [],
+      "body": {
+        "id": "2T446735G11403446",
+        "intent": "AUTHORIZE",
+        "status": "COMPLETED",
+        "payment_source": {
+          "paypal": {
+            "email_address": "[sandbox-email]",
+            "account_id": "KW564SHJRK4BJ",
+            "account_status": "VERIFIED",
+            "name": {
+              "given_name": "John",
+              "surname": "Doe"
+            },
+            "address": {
+              "country_code": "SG"
+            }
+          }
+        },
+        "purchase_units": [
+          {
+            "reference_id": "B",
+            "amount": {
+              "currency_code": "USD",
+              "value": "30.00"
+            },
+            "payee": {
+              "email_address": "[sandbox-email]",
+              "merchant_id": "PVLXJK3DZXLVA"
+            },
+            "description": "PWD spike order B",
+            "custom_id": "spike-B",
+            "invoice_id": "pwd-spike-B-202611081549",
+            "shipping": {
+              "name": {
+                "full_name": "John Doe"
+              },
+              "address": {
+                "address_line_1": "123 Thomson Rd.",
+                "admin_area_2": "Singapore",
+                "postal_code": "308123",
+                "country_code": "SG"
+              }
+            },
+            "payments": {
+              "authorizations": [
+                {
+                  "status": "CREATED",
+                  "id": "3WH54856K9495361T",
+                  "amount": {
+                    "currency_code": "USD",
+                    "value": "30.00"
+                  },
+                  "invoice_id": "pwd-spike-B-202611081549",
+                  "custom_id": "spike-B",
+                  "seller_protection": {
+                    "status": "ELIGIBLE",
+                    "dispute_categories": [
+                      "ITEM_NOT_RECEIVED",
+                      "UNAUTHORIZED_TRANSACTION"
+                    ]
+                  },
+                  "expiration_time": "2026-12-07T16:01:09Z",
+                  "links": [
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/3WH54856K9495361T",
+                      "rel": "self",
+                      "method": "GET"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/3WH54856K9495361T/capture",
+                      "rel": "capture",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/3WH54856K9495361T/void",
+                      "rel": "void",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/payments/authorizations/3WH54856K9495361T/reauthorize",
+                      "rel": "reauthorize",
+                      "method": "POST"
+                    },
+                    {
+                      "href": "https://api.sandbox.paypal.com/v2/checkout/orders/2T446735G11403446",
+                      "rel": "up",
+                      "method": "GET"
+                    }
+                  ],
+                  "create_time": "2026-11-08T16:01:09Z",
+                  "update_time": "2026-11-08T16:01:09Z"
+                }
+              ]
+            }
+          }
+        ],
+        "payer": {
+          "email_address": "[sandbox-email]",
+          "payer_id": "KW564SHJRK4BJ",
+          "address": {
+            "country_code": "SG"
+          }
+        },
+        "create_time": "2026-11-08T15:49:32Z",
+        "update_time": "2026-11-08T16:01:09Z",
+        "links": [
+          {
+            "href": "https://api.sandbox.paypal.com/v2/checkout/orders/2T446735G11403446",
+            "rel": "self",
+            "method": "GET"
+          }
+        ]
+      },
+      "at": "2026-11-08T16:01:15.262Z"
+    }
+  ],
+  "summary": [
+    {
+      "label": "A1",
+      "orderId": "47A48666AA894723D",
+      "authId": "6LP65089RF371532A",
+      "authStatus": "CREATED",
+      "authCreateTime": "2026-11-08T15:59:47Z",
+      "authExpirationTime": "2026-12-07T15:59:47Z"
+    },
+    {
+      "label": "A2",
+      "orderId": "0WT15797HC727551A",
+      "authId": "6VN45365R1323900C",
+      "authStatus": "CREATED",
+      "authCreateTime": "2026-11-08T16:01:07Z",
+      "authExpirationTime": "2026-12-07T16:01:07Z"
+    },
+    {
+      "label": "B",
+      "orderId": "2T446735G11403446",
+      "authId": "3WH54856K9495361T",
+      "authStatus": "CREATED",
+      "authCreateTime": "2026-11-08T16:01:09Z",
+      "authExpirationTime": "2026-12-07T16:01:09Z"
+    },
+    {
+      "label": "C",
+      "orderId": "54M40776C23986738",
+      "authId": "2UD848126B1461209",
+      "authStatus": "CREATED",
+      "authCreateTime": "2026-11-08T16:01:11Z",
+      "authExpirationTime": "2026-12-07T16:01:11Z"
+    },
+    {
+      "label": "D",
+      "orderId": "5SH152820C396250V",
+      "authId": "0MS90256UD826993E",
+      "authStatus": "CREATED",
+      "authCreateTime": "2026-11-08T16:01:13Z",
+      "authExpirationTime": "2026-12-07T16:01:13Z"
+    }
+  ],
+  "authorizeReplay": {
+    "status": 201,
+    "sameAuthId": true,
+    "debugId": "ca575cb91a962"
+  },
+  "agedProbeDueAt": "2026-11-11T16:04:47.000Z"
 }

@@ -1,0 +1,69 @@
+{
+  "note": "REAUTH inside the 3-day honor period on B, then the same PayPal-Request-Id again",
+  "records": [
+    {
+      "step": "reauth-too-soon",
+      "label": "B",
+      "method": "POST",
+      "path": "/v2/payments/authorizations/3WH54856K9495361T/reauthorize",
+      "requestId": "pwd-spike-reauth-too-soon-3WH54856K9495361T",
+      "status": 422,
+      "debugId": "ca575cb99bd8b",
+      "name": "UNPROCESSABLE_ENTITY",
+      "message": "The requested action could not be performed, semantically incorrect, or failed business validation.",
+      "issues": [
+        "REAUTHORIZATION_TOO_SOON"
+      ],
+      "body": {
+        "name": "UNPROCESSABLE_ENTITY",
+        "message": "The requested action could not be performed, semantically incorrect, or failed business validation.",
+        "debug_id": "ca575cb99bd8b",
+        "details": [
+          {
+            "issue": "REAUTHORIZATION_TOO_SOON",
+            "description": "A reauthorization is only allowed once from Day 4 to Day 29 since the date of the original authorization."
+          }
+        ],
+        "links": [
+          {
+            "href": "https://developer.paypal.com/docs/api/payments/v2/#error-REAUTHORIZATION_TOO_SOON",
+            "rel": "information_link"
+          }
+        ]
+      },
+      "at": "2026-11-08T16:01:17.026Z"
+    },
+    {
+      "step": "reauth-too-soon-replay",
+      "label": "B",
+      "method": "POST",
+      "path": "/v2/payments/authorizations/3WH54856K9495361T/reauthorize",
+      "requestId": "pwd-spike-reauth-too-soon-3WH54856K9495361T",
+      "status": 422,
+      "debugId": "ca575cb9e4d77",
+      "name": "UNPROCESSABLE_ENTITY",
+      "message": "The requested action could not be performed, semantically incorrect, or failed business validation.",
+      "issues": [
+        "REAUTHORIZATION_TOO_SOON"
+      ],
+      "body": {
+        "name": "UNPROCESSABLE_ENTITY",
+        "message": "The requested action could not be performed, semantically incorrect, or failed business validation.",
+        "debug_id": "ca575cb9e4d77",
+        "details": [
+          {
+            "issue": "REAUTHORIZATION_TOO_SOON",
+            "description": "A reauthorization is only allowed once from Day 4 to Day 29 since the date of the original authorization."
+          }
+        ],
+        "links": [
+          {
+            "href": "https://developer.paypal.com/docs/api/payments/v2/#error-REAUTHORIZATION_TOO_SOON",
+            "rel": "information_link"
+          }
+        ]
+      },
+      "at": "2026-11-08T16:01:17.030Z"
+    }
+  ]
+}
