@@ -1,0 +1,250 @@
+{
+  "runId": "202611081549",
+  "orders": [
+    {
+      "step": "create",
+      "label": "A1",
+      "method": "POST",
+      "path": "/v2/checkout/orders",
+      "requestId": "pwd-spike-create-A1-202611081549",
+      "status": 200,
+      "debugId": "ca575ba637b76",
+      "name": null,
+      "message": null,
+      "issues": [],
+      "body": {
+        "id": "47A48666AA894723D",
+        "intent": "AUTHORIZE",
+        "status": "PAYER_ACTION_REQUIRED",
+        "payment_source": {
+          "paypal": {}
+        },
+        "purchase_units": [
+          {
+            "reference_id": "A1",
+            "amount": {
+              "currency_code": "USD",
+              "value": "20.00"
+            },
+            "payee": {
+              "email_address": "[sandbox-email]",
+              "merchant_id": "PVLXJK3DZXLVA"
+            },
+            "description": "PWD spike order A1",
+            "custom_id": "spike-A1",
+            "invoice_id": "pwd-spike-A1-202611081549"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://api.sandbox.paypal.com/v2/checkout/orders/47A48666AA894723D",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://www.sandbox.paypal.com/checkoutnow?token=47A48666AA894723D",
+            "rel": "payer-action",
+            "method": "GET"
+          }
+        ]
+      },
+      "at": "2026-11-08T15:49:31.586Z"
+    },
+    {
+      "step": "create",
+      "label": "A2",
+      "method": "POST",
+      "path": "/v2/checkout/orders",
+      "requestId": "pwd-spike-create-A2-202611081549",
+      "status": 200,
+      "debugId": "ca575ba688905",
+      "name": null,
+      "message": null,
+      "issues": [],
+      "body": {
+        "id": "0WT15797HC727551A",
+        "intent": "AUTHORIZE",
+        "status": "PAYER_ACTION_REQUIRED",
+        "payment_source": {
+          "paypal": {}
+        },
+        "purchase_units": [
+          {
+            "reference_id": "A2",
+            "amount": {
+              "currency_code": "USD",
+              "value": "20.00"
+            },
+            "payee": {
+              "email_address": "[sandbox-email]",
+              "merchant_id": "PVLXJK3DZXLVA"
+            },
+            "description": "PWD spike order A2",
+            "custom_id": "spike-A2",
+            "invoice_id": "pwd-spike-A2-202611081549"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://api.sandbox.paypal.com/v2/checkout/orders/0WT15797HC727551A",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://www.sandbox.paypal.com/checkoutnow?token=0WT15797HC727551A",
+            "rel": "payer-action",
+            "method": "GET"
+          }
+        ]
+      },
+      "at": "2026-11-08T15:49:32.328Z"
+    },
+    {
+      "step": "create",
+      "label": "B",
+      "method": "POST",
+      "path": "/v2/checkout/orders",
+      "requestId": "pwd-spike-create-B-202611081549",
+      "status": 200,
+      "debugId": "ca575ba6d2e77",
+      "name": null,
+      "message": null,
+      "issues": [],
+      "body": {
+        "id": "2T446735G11403446",
+        "intent": "AUTHORIZE",
+        "status": "PAYER_ACTION_REQUIRED",
+        "payment_source": {
+          "paypal": {}
+        },
+        "purchase_units": [
+          {
+            "reference_id": "B",
+            "amount": {
+              "currency_code": "USD",
+              "value": "30.00"
+            },
+            "payee": {
+              "email_address": "[sandbox-email]",
+              "merchant_id": "PVLXJK3DZXLVA"
+            },
+            "description": "PWD spike order B",
+            "custom_id": "spike-B",
+            "invoice_id": "pwd-spike-B-202611081549"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://api.sandbox.paypal.com/v2/checkout/orders/2T446735G11403446",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://www.sandbox.paypal.com/checkoutnow?token=2T446735G11403446",
+            "rel": "payer-action",
+            "method": "GET"
+          }
+        ]
+      },
+      "at": "2026-11-08T15:49:33.094Z"
+    },
+    {
+      "step": "create",
+      "label": "C",
+      "method": "POST",
+      "path": "/v2/checkout/orders",
+      "requestId": "pwd-spike-create-C-202611081549",
+      "status": 200,
+      "debugId": "ca575ba71fb27",
+      "name": null,
+      "message": null,
+      "issues": [],
+      "body": {
+        "id": "54M40776C23986738",
+        "intent": "AUTHORIZE",
+        "status": "PAYER_ACTION_REQUIRED",
+        "payment_source": {
+          "paypal": {}
+        },
+        "purchase_units": [
+          {
+            "reference_id": "C",
+            "amount": {
+              "currency_code": "USD",
+              "value": "20.00"
+            },
+            "payee": {
+              "email_address": "[sandbox-email]",
+              "merchant_id": "PVLXJK3DZXLVA"
+            },
+            "description": "PWD spike order C",
+            "custom_id": "spike-C",
+            "invoice_id": "pwd-spike-C-202611081549"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://api.sandbox.paypal.com/v2/checkout/orders/54M40776C23986738",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://www.sandbox.paypal.com/checkoutnow?token=54M40776C23986738",
+            "rel": "payer-action",
+            "method": "GET"
+          }
+        ]
+      },
+      "at": "2026-11-08T15:49:33.894Z"
+    },
+    {
+      "step": "create",
+      "label": "D",
+      "method": "POST",
+      "path": "/v2/checkout/orders",
+      "requestId": "pwd-spike-create-D-202611081549",
+      "status": 200,
+      "debugId": "ca575ba76ff86",
+      "name": null,
+      "message": null,
+      "issues": [],
+      "body": {
+        "id": "5SH152820C396250V",
+        "intent": "AUTHORIZE",
+        "status": "PAYER_ACTION_REQUIRED",
+        "payment_source": {
+          "paypal": {}
+        },
+        "purchase_units": [
+          {
+            "reference_id": "D",
+            "amount": {
+              "currency_code": "USD",
+              "value": "20.00"
+            },
+            "payee": {
+              "email_address": "[sandbox-email]",
+              "merchant_id": "PVLXJK3DZXLVA"
+            },
+            "description": "PWD spike order D",
+            "custom_id": "spike-D",
+            "invoice_id": "pwd-spike-D-202611081549"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://api.sandbox.paypal.com/v2/checkout/orders/5SH152820C396250V",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://www.sandbox.paypal.com/checkoutnow?token=5SH152820C396250V",
+            "rel": "payer-action",
+            "method": "GET"
+          }
+        ]
+      },
+      "at": "2026-11-08T15:49:34.759Z"
+    }
+  ]
+}
