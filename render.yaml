@@ -1,0 +1,70 @@
+# Render Blueprint for Pay-When-Done (plan 01-10).
+# Paid plans only (about 20 USD/month): free web services sleep and miss PayPal webhooks,
+# background workers have no free tier, and free Postgres is deleted after 30 days.
+databases:
+  - name: pwd-db
+    plan: 0.1c-256mb
+    region: oregon
+    postgresMajorVersion: "18"
+
+services:
+  - type: web
+    name: pwd-web
+    runtime: node
+    plan: 0.5c-512mb
+    region: oregon
+    buildCommand: npm ci && npm run build
+    preDeployCommand: npm run render:predeploy
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: pwd-db
+          property: connectionString
+      - key: BETTER_AUTH_SECRET
+        generateValue: true
+      # The hackathon deploy is the demo; any other deploy sets "false".
+      - key: DEMO_MODE
+        value: "true"
+      - key: PAYPAL_API_BASE
+        value: https://api-m.sandbox.paypal.com
+      - key: R2_BUCKET
+        value: pwd-evidence
+      - key: DEMO_SEED_PASSWORD
+        sync: false
+      - key: SEED_WORKER_PAYPAL_EMAIL
+        sync: false
+      - key: JUDGE_SIGNUP_CODE
+        sync: false
+      - key: PAYPAL_CLIENT_ID
+        sync: false
+      - key: PAYPAL_CLIENT_SECRET
+        sync: false
+      - key: R2_ACCOUNT_ID
+        sync: false
+      - key: R2_ACCESS_KEY_ID
+        sync: false
+      - key: R2_SECRET_ACCESS_KEY
+        sync: false
+      - key: DIAG_TOKEN
+        sync: false
+
+  - type: worker
+    name: pwd-worker
+    runtime: node
+    plan: 0.5c-512mb
+    region: oregon
+    buildCommand: npm ci
+    startCommand: npm run worker
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: pwd-db
+          property: connectionString
