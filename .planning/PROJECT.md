@@ -28,7 +28,7 @@ Money only moves when the work is proven: a PayPal authorization holds the custo
 **Ground rules (apply to every feature)**
 - [ ] Held, not taken: booking places a PayPal authorization; money moves only on capture, after proof
 - [ ] AI can only say yes: AI may auto-release when highly confident; it never refunds or penalises — every "no" goes to a person
-- [ ] Two models must agree: Anthropic (Claude) and Google (Gemini) score the same pinned evidence in parallel; disagreement or outage routes to the customer
+- [ ] One AI judge: Google Gemini scores the pinned evidence; an outage or a below-bar score routes to the customer
 - [ ] The checklist is the contract: per-task checklist agreed before work starts, stored as structured items, loaded from the DB at verification time
 - [ ] Nothing stalls: every waiting state has a timer (open-job expiry, day-3 reauth, review window, dispute SLA)
 
@@ -74,8 +74,8 @@ Money only moves when the work is proven: a PayPal authorization holds the custo
 - [ ] Stage 1 completeness: before/after per required item, video if required, keyframes extracted
 - [ ] Stage 2 integrity gate: pHash after-vs-before (edited before), pHash vs all past photos (reuse), stock/web image check, EXIF time in job window, EXIF + device GPS within 300 m
 - [ ] Stage 3 checklist check: vision agent marks each item met/unmet with reason and photo used
-- [ ] Stage 4 rubric: Claude and Gemini score 5 criteria (checklist met, visible change, workmanship, working proof, site clean) 0–10 in parallel on the same pinned prompt
-- [ ] Stage 5 route: numeric comparison with 1.5-point tolerance; auto-release (gate clean, all items met, both avg ≥ 8, no criterion < 6) / ask customer (below bar, disagreement, outage) / flag and ask (gate failed, items unmet, avg < 6)
+- [ ] Stage 4 rubric: Gemini scores 5 criteria (checklist met, visible change, workmanship, working proof, site clean) 0–10 on the pinned prompt
+- [ ] Stage 5 route: auto-release (gate clean, all items met, avg ≥ 8, no criterion < 6) / ask customer (below bar, outage) / flag and ask (gate failed, items unmet, avg < 6)
 
 **Money flow (PayPal sandbox)**
 - [ ] Book: Orders v2 create (intent AUTHORIZE) → authorize → held
@@ -123,7 +123,7 @@ Money only moves when the work is proven: a PayPal authorization holds the custo
 ## Constraints
 
 - **Tech stack**: Next.js full-stack TypeScript (PWA + API route handlers), Postgres, object storage with signed URLs, separate worker process for the minute sweeper — one codebase, solo builder
-- **AI providers**: Anthropic (Claude) + Google (Gemini) as the two independent model vendors — so one outage can't decide a payment; Gemini also handles video natively
+- **AI provider**: Google Gemini is the only verification judge (owner decision 2026-11-08); a Gemini outage routes to the customer, so it can never decide a payment on its own. Gemini also handles video natively
 - **Payments**: PayPal sandbox only — Orders v2 (AUTHORIZE → capture), Authorizations (capture/reauthorize/void), Payouts, Captures/refunds, Webhooks
 - **Timeline**: Solo build, ~1–2 weeks — blueprint phases 1–3 are must-haves; phase 4 trimmed to what the demo video needs
 - **Market**: Aircon servicing, United States, USD
@@ -147,10 +147,10 @@ Scoped v1 requirements live in `.planning/REQUIREMENTS.md`, which supersedes the
 | Kept from blueprint against research advice: multi-turn chat intake, judge agreement step, stock-image check (Cloud Vision) | Owner's call | — Pending |
 | Ratings/reputation → v2 | Not needed for the demo moments | — Pending |
 | Next.js full-stack TypeScript for app + API | Fastest single-codebase path for a solo hackathon build and one Render deploy | — Pending |
-| Anthropic + Google as the dual-model judge | Two independent vendors; Gemini handles video natively for working-proof clips | — Pending |
+| ~~Anthropic + Google as the dual-model judge~~ → Gemini as the only judge (changed 2026-11-08) | Owner decision: one vendor, one key, simpler routing. Safety now rests on strict thresholds, the integrity gate and outage-to-customer routing instead of cross-vendor agreement. Gemini handles video natively | — Pending |
 | Aircon servicing, US, USD | Very visual before/after and a clear working-proof video; biggest PayPal market | — Pending |
 | Customer sets price from AI-suggested range; hold placed at posting | Blueprint section 09 default | — Pending |
-| Strict auto-release thresholds (avg ≥ 8, no criterion < 6, models within 1.5) | Start strict, loosen with demo data | — Pending |
+| Strict auto-release thresholds (avg ≥ 8, no criterion < 6) | Start strict, loosen with demo data | — Pending |
 | Silent customer past 2 h window → 30% kill fee captured, rest to judge | Colony-style; protects workers without auto-releasing unreviewed work | — Pending |
 | PayPal Payouts from platform balance (95/5 split) | Simplest working sandbox path; marketplace payee setup is production-only | — Pending |
 | Jobs capped at 29 days | One authorization lifetime; milestone holds later | — Pending |

@@ -11,7 +11,7 @@ Requirements for the hackathon release. Each maps to one roadmap phase.
 
 - [ ] **FND-01**: The app is deployed on Render on paid plans (web service, background worker, Postgres) with a public HTTPS URL that PayPal webhooks can reach
 - [ ] **FND-02**: Photos and videos are stored in Cloudflare R2: a private bucket, uploaded via presigned URLs and viewed via signed URLs only
-- [ ] **FND-03**: Spike results are written down before money and evidence code is built. They cover PayPal reauthorize count and timing, partial capture then void, Payouts in sandbox, iPhone/Android photo metadata, Elastic bit-vector search, Claude + Gemini structured scoring, Zapier Catch Hook access, and SSE on Render
+- [ ] **FND-03**: Spike results are written down before money and evidence code is built. They cover PayPal reauthorize count and timing, partial capture then void, Payouts in sandbox, iPhone/Android photo metadata, Elastic bit-vector search, Gemini structured scoring, Zapier Catch Hook access, and SSE on Render
 - [ ] **AUTH-01**: User can sign up and log in with email and password, and stay logged in across refreshes
 - [ ] **AUTH-02**: Each account has one role (customer, worker or judge), and the server checks role and job relationship on every decision
 - [ ] **AUTH-03**: Worker provides a PayPal email for payouts at sign-up
@@ -69,13 +69,13 @@ Requirements for the hackathon release. Each maps to one roadmap phase.
 - [ ] **AI-01**: Verification is triggered by job id only and reads the checklist and evidence from the database, never from the request. It locks the job and allows at most 3 attempts
 - [ ] **AI-02**: A completeness check confirms before and after photos exist for every required item, plus a video if required
 - [ ] **AI-03**: A vision agent marks each checklist item met or unmet, with a reason and the photo it used
-- [ ] **AI-04**: Claude and Gemini each score the same JPEG keyframes in parallel on 5 criteria (checklist met, visible change, workmanship, working proof, site clean), 0 to 10
-- [ ] **AI-05**: Scores are compared numerically within a 1.5-point tolerance. Any timeout, schema failure or refusal counts as an outage
-- [ ] **AI-06**: Auto-release happens only when the gate is clean, every item is met, both averages are at least 8, no criterion is under 6, and the models agree. The thresholds are configurable
-- [ ] **AI-07**: Disagreement, outage or below-bar scores route to the customer. A failed gate, unmet items or an average under 6 route to the customer with warnings shown first
+- [ ] **AI-04**: Gemini scores the pinned JPEG evidence and keyframes on 5 criteria (checklist met, visible change, workmanship, working proof, site clean), 0 to 10
+- [ ] **AI-05**: Every Gemini output is re-validated against the rubric schema. Any timeout, schema failure or refusal counts as an outage
+- [ ] **AI-06**: Auto-release happens only when the gate is clean, every item is met, the average is at least 8 and no criterion is under 6. The thresholds are configurable
+- [ ] **AI-07**: Outage or below-bar scores route to the customer. A failed gate, unmet items or an average under 6 route to the customer with warnings shown first
 - [ ] **AI-08**: Text in photos that tries to instruct the AI is flagged and forces the flag-and-ask route
 - [ ] **AI-09**: Every AI and human decision is written to an append-only verdict log, with the prompt, evidence hashes, model ids and raw output
-- [ ] **AI-10**: Presenter can switch off one model vendor to demonstrate the degrade-to-customer path
+- [ ] **AI-10**: Presenter can switch off the AI judge to demonstrate the degrade-to-customer path
 
 ### Customer Review
 

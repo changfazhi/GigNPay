@@ -26,7 +26,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 2: Money Skeleton** - PayPal hold, cancel/void, and a human-click release that captures and pays the worker 95%, backed by an append-only ledger
 - [ ] **Phase 3: Job Lifecycle** - Chat intake, checklist and price contract, job board, atomic accept, geofenced check-in, live status
 - [ ] **Phase 4: Evidence Capture & Integrity Gate** - Untouched phone originals with server-observed signals, plus reuse, edit and stock-image detection
-- [ ] **Phase 5: AI Verification & Routing** - Claude and Gemini score the same evidence; auto-release only when both agree, otherwise the customer decides
+- [ ] **Phase 5: AI Verification & Routing** - Gemini scores the evidence; auto-release only when it clears the strict bar, otherwise the customer decides
 - [ ] **Phase 6: Timers, Disputes & Judge Console** - Sweeper and demo clock, reject-to-dispute flow, AI case brief, one-screen judge ruling carried out in PayPal
 - [ ] **Phase 7: Sponsor Integrations, Hardening & Demo** - Zapier emails, Elastic mirror, demo reset, and the three video moments running end to end
 
@@ -44,7 +44,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. A user can sign up as a customer, worker or judge with email and password (workers must give a PayPal email), stay logged in across a refresh, and an attempt to use another role's action is refused by the server.
   3. In demo mode the presenter can switch between the seeded customer, worker and judge accounts with one click, and every request after a switch is still authorized as that account.
   4. A photo and a short video taken on a phone upload directly to the private R2 bucket and display only through a signed URL, while the unsigned object URL is refused.
-  5. Written spike results exist for PayPal reauthorize count and timing, partial capture then void, Payouts in sandbox, iPhone and Android photo metadata, Elastic bit-vector search, Claude and Gemini structured scoring, Zapier Catch Hook access, and SSE on Render, each stating what happened and what it changes in the design.
+  5. Written spike results exist for PayPal reauthorize count and timing, partial capture then void, Payouts in sandbox, iPhone and Android photo metadata, Elastic bit-vector search, Gemini structured scoring, Zapier Catch Hook access, and SSE on Render, each stating what happened and what it changes in the design.
 
 **Plans:** 6/19 plans executed
 
@@ -62,7 +62,7 @@ Plans:
 **Wave 3** *(blocked on Wave 2 completion)*
 
 - [x] 01-05-PLAN.md — Walking skeleton 4/7: Better Auth roles, worker PayPal email, D-02 judge gate, Phase 1 Drizzle schema and migration [W3]
-- [ ] 01-06-PLAN.md — S-LLM: Claude and Gemini structured scoring on the same JPEGs [W3]
+- [ ] 01-06-PLAN.md — S-LLM: Gemini structured scoring on the same JPEGs (Claude dropped 2026-11-08) [W3]
 - [ ] 01-07-PLAN.md — FND-02 storage core: private R2 bucket, presign module, live round-trip (unsigned/expired refused) [W3]
 
 **Wave 4** *(blocked on Wave 3 completion)*
@@ -162,16 +162,16 @@ Plans:
 
 ### Phase 5: AI Verification & Routing
 
-**Goal:** Submitted proof is scored by two independent AI vendors, payment is released automatically only when both are confident and agree, and every other outcome goes to the customer, who sees the evidence and flags before deciding.
+**Goal:** Submitted proof is scored by the Gemini judge, payment is released automatically only when it is confident, and every other outcome goes to the customer, who sees the evidence and flags before deciding.
 **Mode:** mvp
 **Depends on**: Phase 4
 **Requirements**: AI-01, AI-02, AI-03, AI-04, AI-05, AI-06, AI-07, AI-08, AI-09, AI-10, LIFE-02, REV-01, REV-04
 **Success Criteria** (what must be TRUE):
 
-  1. Happy path: when a worker submits a complete, clean evidence set, verification starts from the job id alone, confirms every required photo and video exists, marks each checklist item met with a reason and the photo used, and when Claude and Gemini score the same keyframes with both averages at least 8, no criterion under 6 and scores within 1.5 points, the job auto-releases and the capture and 95% payout happen with no customer click. The thresholds are configurable.
+  1. Happy path: when a worker submits a complete, clean evidence set, verification starts from the job id alone, confirms every required photo and video exists, marks each checklist item met with a reason and the photo used, and when Gemini scores the keyframes with an average of at least 8 and no criterion under 6, the job auto-releases and the capture and 95% payout happen with no customer click. The thresholds are configurable.
   2. Fraud catch: a job with a reused photo fails the integrity gate and goes to the customer with warnings shown first; the review panel shows before and after side by side, per-item AI verdicts, scores and fraud flags, including the matched original.
-  3. From the review panel the customer can approve, "pay now" (skipping the AI), or "approve anyway" after a flagged result; every non-yes outcome (below bar, disagreement, outage, failed gate, unmet items) lands with the customer, and the AI has no path to refund or reject.
-  4. The presenter can switch off one model vendor and the next submission routes to the customer instead of auto-releasing (timeouts, schema failures and refusals count as an outage); a photo containing text that tries to instruct the AI is flagged and forces the flag-and-ask route.
+  3. From the review panel the customer can approve, "pay now" (skipping the AI), or "approve anyway" after a flagged result; every non-yes outcome (below bar, outage, failed gate, unmet items) lands with the customer, and the AI has no path to refund or reject.
+  4. The presenter can switch off the AI judge and the next submission routes to the customer instead of auto-releasing (timeouts, schema failures and refusals count as an outage); a photo containing text that tries to instruct the AI is flagged and forces the flag-and-ask route.
   5. Every AI and human decision appears in an append-only verdict log with the prompt, evidence hashes, model ids and raw output, and a job is locked while verifying and gets at most 3 attempts.
 
 **Plans**: TBD

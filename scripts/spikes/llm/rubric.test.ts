@@ -7,7 +7,7 @@ import {
   TOLERANCE,
   criterionAverage,
   meetsAutoReleaseBar,
-  vendorGap,
+  scoreGap,
 } from "./rubric";
 
 type RubricValue = z.infer<typeof Rubric>;
@@ -71,9 +71,9 @@ describe("comparison helpers", () => {
     expect(criterionAverage(make([10, 8, 6, 4, 2]))).toBe(6);
   });
 
-  it("vendorGap is the absolute difference of averages", () => {
-    expect(vendorGap(make([8, 8, 8, 8, 8]), make([6, 6, 6, 6, 6]))).toBe(2);
-    expect(vendorGap(make([6, 6, 6, 6, 6]), make([8, 8, 8, 8, 8]))).toBe(2);
+  it("scoreGap is the absolute difference of averages", () => {
+    expect(scoreGap(make([8, 8, 8, 8, 8]), make([6, 6, 6, 6, 6]))).toBe(2);
+    expect(scoreGap(make([6, 6, 6, 6, 6]), make([8, 8, 8, 8, 8]))).toBe(2);
   });
 
   it("meetsAutoReleaseBar needs avg >= 8 and every criterion >= 6", () => {

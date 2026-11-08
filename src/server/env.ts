@@ -34,7 +34,6 @@ export const EnvSchema = z.object({
   DIAG_TOKEN: opt(z.string().min(24)),
   APP_BASE_URL: url(),
   ANTHROPIC_API_KEY: text(),
-  CLAUDE_JUDGE_MODEL: text(),
   GEMINI_API_KEY: text(),
   GEMINI_MODEL: text(),
   ELASTIC_URL: url(),

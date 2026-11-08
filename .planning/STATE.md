@@ -66,6 +66,7 @@ Recent decisions affecting current work:
 - [Roadmap]: Human-click release (capture + payout) lands in Phase 2 so the PayPal story survives if AI slips
 - [Roadmap]: Sweeper, demo clock and judge console are in Phase 6, not stretch; the dispute moment needs them
 - [Roadmap]: Reauth logic is built (PAY-09) but not shown in the video; kill fee, rework and ratings are v2
+- [2026-11-08]: Owner dropped Claude as a verification judge; Gemini is the only judge. No cross-vendor agreement step; outage or below-bar routes to the customer (AI-04..07, AI-10 reworded)
 - [Roadmap]: Multi-turn chat intake (JOB-02), judge agreement step (DISP-05) and stock-image check (EVID-08) stay in v1 by owner decision
 - [Roadmap]: Phase 1 spike results gate Phase 2 money code and Phase 4 evidence code (FND-03)
 

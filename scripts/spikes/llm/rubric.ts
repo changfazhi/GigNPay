@@ -28,7 +28,7 @@ export const Rubric = z.object({
 
 export type RubricResult = z.infer<typeof Rubric>;
 
-/** Max allowed gap between the two vendors' criterion averages (blueprint: 1.5 points). */
+/** Max gap between two Gemini runs' criterion averages on the same photos before scores count as unstable. */
 export const TOLERANCE = 1.5;
 /** Auto-release bar: average of the five criteria at or above this... */
 export const AVG_BAR = 8;
@@ -69,7 +69,7 @@ export function criterionAverage(r: RubricResult): number {
   return s.reduce((a, b) => a + b, 0) / s.length;
 }
 
-export function vendorGap(a: RubricResult, b: RubricResult): number {
+export function scoreGap(a: RubricResult, b: RubricResult): number {
   return Math.abs(criterionAverage(a) - criterionAverage(b));
 }
 
