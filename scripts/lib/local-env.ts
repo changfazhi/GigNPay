@@ -26,14 +26,19 @@ export function repoTop(): string {
 }
 
 /**
- * Loads `<mainRoot>/.env.local` into process.env when it exists. Variables already set in the
- * process environment win. Returns the key names found in the file, never values.
+ * Loads `<mainRoot>/.env.local`, then `<mainRoot>/.env`, into process.env when they exist.
+ * Variables already set win, so the process environment beats `.env.local`, which beats `.env`.
+ * Returns the key names found in the files, never values.
  */
 export function loadLocalEnv(): string[] {
-  const file = join(mainRoot(), ".env.local");
-  if (!existsSync(file)) return [];
-  process.loadEnvFile(file);
-  return Object.keys(parseEnv(readFileSync(file, "utf8")));
+  const keys = new Set<string>();
+  for (const name of [".env.local", ".env"]) {
+    const file = join(mainRoot(), name);
+    if (!existsSync(file)) continue;
+    process.loadEnvFile(file);
+    for (const k of Object.keys(parseEnv(readFileSync(file, "utf8")))) keys.add(k);
+  }
+  return [...keys];
 }
 
 /** `<mainRoot>/.spike-state` (gitignored, shared across worktrees). Created if missing. */

@@ -265,9 +265,8 @@ async function main(): Promise<void> {
 
   const list = await listGeminiModels(ai);
   const geminiModel =
-    process.env.GEMINI_MODEL ??
-    GEMINI_PREFERENCE.find((id) => list.relevant.includes(id)) ??
-    GEMINI_PREFERENCE[0];
+    process.env.GEMINI_MODEL ||
+    (GEMINI_PREFERENCE.find((id) => list.relevant.includes(id)) ?? GEMINI_PREFERENCE[0]);
   console.log(`gemini model: ${geminiModel} (list ok: ${list.error === null})`);
 
   const calls: CallRecord[] = [];
